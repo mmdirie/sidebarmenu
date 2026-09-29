@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+body{
+    background: #d6eed6;
+}
+.menu{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 45px;
+    color: rgb(6, 9, 63);
+    animation-name: animatedbutton;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes animatedbutton{
+    0%{
+        font-size: 45px;
+
+    }
+    50%{
+        font-size: 30px;
+    }
+    100%{
+        font-size: 45px;
+    }
+}
+.side-bar{
+    height: 100vh;
+    background: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+
+}
+.close-btn{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(red, green, blue);
+}
+.logo{
+font-size: xx-large;
+font-weight: bold;
+text-shadow: 0px 1px 5px rgb(172, 144, 198);
+}
+.pages{
+    margin-top: 30px;
+    font-size: x-large;
+}
+.pages ul{
+    display: flex;
+    flex-direction: column;
+
+}
+ul li{
+    padding: 1rem;
+    transition: background-color 0.5s;
+}
+ul li:hover{
+    background-color: #d6eed6;
+    
+}
+.icons {
+    position: absolute;
+    bottom: 25px;
+    left: 55px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.icons il i{
+    font-size: large;
+    color: rgb(red, green, blue);
+}
+.side-bar{
+    transform: translateX(-600px);
+    transition: transform 0.75s;
+}
+.show-side-bar{
+    transform: translateX(0px);
+      transition: transform 0.75s;
+
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="side-bar">
+        <div class="header">
+            <div class="logo">
+                AFLAX <span>SKILL</span>
+            </div>
+            <div class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="pages">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+        <ul class="icons">
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+            <li><i class="fa-brands fa-square-twitter"></i></li>
+            <li><i class="fa-brands fa-square-youtube"></i></li>
+        </ul>
+    </div>
+    <div class="menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <script >
+        let miinu = document.querySelector(`.menu`),
+    closebtn = document.querySelector(`.close-btn`),
+    sidebar = document.querySelector(`.side-bar`);
+
+miinu.addEventListener(`click`, () => {
+    sidebar.classList.toggle(`show-side-bar`);
+});
+
+closebtn.addEventListener(`click`, () => {
+    sidebar.classList.remove(`show-side-bar`);
+});
+    </script>
+
+</body>
+
+</html>
